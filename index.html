@@ -101,7 +101,7 @@ footer{border-top:1px solid var(--border);padding:16px 32px;font-size:11px;color
 <body>
 <header>
   <div class="logo"><div class="logo-dot"></div>Metamer · Energy Monitor</div>
-  <div class="header-meta"><span class="live-badge">live</span><span>maggio 2026</span><span>6 mag 2026</span></div>
+  <div class="header-meta"><span class="live-badge">live</span><span>maggio 2026</span><span>7 mag 2026</span></div>
 </header>
 <main>
   <div class="kpi-row">
@@ -123,7 +123,7 @@ footer{border-top:1px solid var(--border);padding:16px 32px;font-size:11px;color
       <button class="tab" id="tl" onclick="setTab('luce')">⚡ Luce</button>
     </div>
     <div class="controls-right">
-      <span class="upd-time">6 mag 2026 · Fonti: siti ufficiali</span>
+      <span class="upd-time">7 mag 2026 · Fonti: siti ufficiali</span>
       <button id="lc-btn" onclick="runLinkCheck()" style="font-size:11px;padding:5px 12px">🔗 Verifica link</button>
       <button id="chart-btn" onclick="toggleCharts()" style="font-size:11px;padding:5px 12px">📊 Grafici</button>
     </div>
@@ -212,11 +212,11 @@ var GAS=[
   {f:'Enel Energia',n:'Fix Web Gas',t:'fisso',qf:144,pm:0.420,d:36,src:'enel.it',note:'0.420 €/Smc — confermato enel.it. Valida fino 13/05/2026.',tag:'sc'},
   {f:'Hera Comm',n:'Più Controllo Flat Gas',t:'fisso',qf:144,pm:0.600,d:12,src:'heracomm.gruppohera.it',note:'0.600 €/Smc — confermato heracomm.gruppohera.it.',tag:'ok'},
   {f:'Plenitude',n:'Fixa Time Smart Gas',t:'fisso',qf:90,pm:0.6050,d:12,src:'eniplenitude.com',note:'0.6050 €/Smc — confermato eniplenitude.com. QF 90€/a (sconto CCV). Scade 13/05/2026.',tag:'sc'},
-  {f:'Poste Energia',n:'Gas Casa',t:'fisso',qf:89,pm:0.695,d:12,src:'postepay.poste.it',note:'0.695 €/Smc — scaduta 09/05/2026. Verificare nuove condizioni su postepay.poste.it.',tag:'uf'},
+  {f:'Poste Energia',n:'Gas Casa',t:'fisso',qf:89,pm:0.695,d:12,src:'postepay.poste.it',note:'0.695 €/Smc bloccato 12 mesi — confermato postepay.poste.it 07/05/2026. QF 89€/a. SCADE 09/05/2026 (tra 2 giorni!). Gas CO2 compensato.',tag:'sc'},
   {f:'Edison Energia',n:'WEB Gas',t:'fisso',qf:100,pm:0.520,d:12,src:'offerte.edisonenergia.it',note:'0.52 €/Smc — confermato offerte.edisonenergia.it. Promo QF 75€/a (anzichè 100€) per i primi 12m.',tag:'ok'},
-  {f:'Octopus Energy',n:'Fissa 12M Gas',t:'fisso',qf:84,pm:0.530,d:12,src:'octopusenergy.it',note:'0.530 €/Smc — QF 84€/a (7€/mese). Valida fino al 06/05/2026 (scade oggi). Fonte: portale ARERA + punto-informatico.it. 100% CO2 compensato. No penali recesso.',tag:'sc'},
+  {f:'Octopus Energy',n:'Fissa 12M Gas',t:'fisso',qf:84,pm:0.480,d:12,src:'octopusenergy.it',note:'0.480 €/Smc — settimana 07-13/05/2026 (▼ da 0.530 settimana scorsa). Fonte: luce-gas.it 07/05. QF 84€/a (7€/mese). No penali. 100% CO2 compensato.',tag:'sc'},
   {f:'Octopus Energy',n:'Flex Gas',t:'variabile',qf:84,pm:0.060,d:0,src:'octopusenergy.it',note:'PSV + 0.060 €/Smc — QF 84€/a. Fonte: luce-gas.it mag 2026. Verificare spread su octopusenergy.it/le-nostre-tariffe. No penali recesso.',tag:'uf'},
-  {f:'Dolomiti Energia',n:'Mitica Gas 36',t:'fisso',qf:72,pm:0.507,d:36,src:'dolomitienergia.it',note:'0.507 €/Smc (settimana 30/04–06/05) — offerta scaduta 06/05/2026. Dolomiti rinnova i prezzi ogni lunedì: verificare su dolomitienergia.it per i prezzi aggiornati.',tag:'uf'},
+  {f:'Dolomiti Energia',n:'Mitica Gas 36',t:'fisso',qf:72,pm:0.507,d:36,src:'dolomitienergia.it',note:'0.507 €/Smc — confermato dolomitienergia.it. Settimana 07/05–13/05/2026. Stesso prezzo della settimana precedente. Scade 13/05. CO2 compensata.',tag:'sc'},
   {f:'NeN',n:'Gas Surf',t:'variabile',qf:138,pm:0.000,d:0,src:'nen.it',note:'PSV + 0 spread — confermato nen.it. QF 138€/a. 100% CO2 compensato.',tag:'ok'},
   {f:'Edison Energia',n:'World Plus Gas',t:'variabile',qf:120,pm:0.000,d:0,src:'offerte.edisonenergia.it',note:'PSV puro, spread 0 — confermato offerte.edisonenergia.it. QF 120€/a.',tag:'ok'},
   {f:'Pulsee',n:'Relax Gas',t:'fisso',qf:84,pm:0.577,d:24,src:'pulsee.it/offerte-casa-luce-gas/luce-gas-relax',note:'0.577 €/Smc — dati forniti direttamente. QF 84€/a (7€/mese). Fisso 24 mesi. Scade 11/05/2026. 100% rinnovabile GO.',tag:'ok'},
@@ -231,10 +231,10 @@ var LUCE=[
   {f:'Metamer',n:'Due Fisso',t:'fisso',qf:144,pm:0.13500,d:24,src:'metamer.it',note:'Riferimento Metamer — prezzo fisso 24 mesi.',isRef:true},
   {f:'Metamer',n:'Prezzo Netto Zero',t:'variabile',qf:120,pm:0,d:0,src:'metamer.it',note:'Riferimento Metamer — spread zero su PUN. TI.',isRef:true},
   {f:'Edison Energia',n:'WEB Luce',t:'fisso',qf:100,pm:0.1140,d:12,src:'offerte.edisonenergia.it',note:'0.1140 €/kWh monoraria — confermato offerte.edisonenergia.it. Promo QF 75€/a (anzichè 100€) per i primi 12m. Servizio Risolve incluso.',tag:'ok'},
-  {f:'Octopus Energy',n:'Fissa 12M Luce',t:'fisso',qf:72,pm:0.1298,d:12,src:'octopusenergy.it',note:'0.1298 €/kWh monoraria — QF 72€/a (6€/mese). Valida fino al 06/05/2026 (scade oggi). Fonte: portale ARERA + html.it 5 mag 2026. 100% rinnovabile certificato GSE. No penali.',tag:'sc'},
+  {f:'Octopus Energy',n:'Fissa 12M Luce',t:'fisso',qf:72,pm:0.1230,d:12,src:'octopusenergy.it',note:'0.123 €/kWh monoraria — settimana 07-13/05/2026 (▼ da 0.1298 settimana scorsa). Fonte: luce-gas.it 07/05. QF 72€/a (6€/mese). No penali. 100% rinnovabile GO.',tag:'sc'},
   {f:'Octopus Energy',n:'Flex Luce',t:'variabile',qf:72,pm:0.009,d:0,src:'octopusenergy.it',note:'PUN + 0.009 €/kWh — QF 72€/a. Fonte: luce-gas.it mag 2026. Verificare spread su octopusenergy.it/le-nostre-tariffe. No penali recesso.',tag:'uf'},
   {f:'Illumia',n:'Energia Lunga Easy',t:'fisso',qf:96,pm:0.1190,d:36,src:'illumia.it',note:'0.119 €/kWh — blocco 36 mesi. Fonte: SOStariffe.',tag:'uf'},
-  {f:'Dolomiti Energia',n:'Mitica Energia 36',t:'fisso',qf:72,pm:0.1250,d:36,src:'dolomitienergia.it',note:'0.125 €/kWh (settimana 30/04–06/05) — offerta scaduta 06/05/2026. Dolomiti rinnova i prezzi ogni lunedì: verificare su dolomitienergia.it per i prezzi aggiornati.',tag:'uf'},
+  {f:'Dolomiti Energia',n:'Mitica Energia 36',t:'fisso',qf:72,pm:0.1250,d:36,src:'dolomitienergia.it',note:'0.125 €/kWh (settimana 30/04–06/05 — scaduta). Pagina dolomitienergia.it non ancora aggiornata per la settimana 07-13/05. Verificare lunedì prossimo.',tag:'uf'},
   {f:'Dolomiti Energia',n:'Fisso Luce 120',t:'fisso',qf:120,pm:0.099,d:120,src:'dolomitienergia.it',note:'0.099 €/kWh — offerta 10 anni (120 mesi)! Confermato dolomitienergia.it (settimana 30/04–06/05, scaduta 06/05). Penale recesso: max 8€/mese residuo. Verificare disponibilità e nuovo prezzo su sito.',tag:'uf'},
   {f:'ESA Energia',n:'Offerta Casa Luce',t:'fisso',qf:144,pm:0.1628,d:12,src:'esaenergia.it',note:'0.1628 €/kWh — dati forniti direttamente. Fornitore regionale Abruzzo/Molise.',tag:'ok'},
   {f:'ESA Energia',n:'Variabile Casa Luce',t:'variabile',qf:144,pm:0.0264,d:0,src:'esaenergia.it',note:'PUN + 0.0264 €/kWh — dati forniti direttamente. Fornitore regionale Abruzzo/Molise.',tag:'ok'},
@@ -244,7 +244,7 @@ var LUCE=[
   {f:'Enel Energia',n:'Fix Web Luce',t:'fisso',qf:144,pm:0.142,d:36,src:'enel.it',note:'0.142 €/kWh — confermato enel.it. Valida fino 13/05/2026.',tag:'sc'},
   {f:'Hera Comm',n:'Più Controllo Flat Luce',t:'fisso',qf:144,pm:0.1499,d:12,src:'heracomm.gruppohera.it',note:'0.1499 €/kWh — confermato heracomm.gruppohera.it.',tag:'ok'},
   {f:'Plenitude',n:'Fixa Time Smart Luce',t:'fisso',qf:90,pm:0.1601,d:12,src:'eniplenitude.com',note:'0.1601 €/kWh — confermato eniplenitude.com. QF 90€/a. Scade 13/05/2026.',tag:'sc'},
-  {f:'Poste Energia',n:'Luce Casa',t:'fisso',qf:89,pm:0.186,d:12,src:'postepay.poste.it',note:'0.186 €/kWh — scaduta 09/05/2026. Verificare nuove condizioni su postepay.poste.it.',tag:'uf'},
+  {f:'Poste Energia',n:'Luce Casa',t:'fisso',qf:89,pm:0.186,d:12,src:'postepay.poste.it',note:'0.186 €/kWh bloccato 12 mesi (incl. perdite rete) — confermato postepay.poste.it 07/05/2026. QF 89€/a. SCADE 09/05/2026 (tra 2 giorni!). Luce 100% rinnovabile GO.',tag:'sc'},
   {f:'NeN',n:'Luce Surf',t:'variabile',qf:108,pm:0.000,d:0,src:'nen.it',note:'PUN + 0 spread — confermato nen.it. QF 108€/a. 100% rinnovabile.',tag:'ok'},
   {f:'Hera Comm',n:'Più Controllo Active Luce',t:'variabile',qf:144,pm:0.00495,d:12,src:'heracomm.gruppohera.it',note:'PUN + 0.00495 €/kWh — confermato heracomm.gruppohera.it.',tag:'ok'},
   {f:'Sorgenia',n:'Next Energy Sunlight Luce',t:'variabile',qf:91,pm:0.010,d:0,src:'sorgenia.it',note:'PUN + fee. QF ~91€/a — confermato sorgenia.it.',tag:'uf'},
