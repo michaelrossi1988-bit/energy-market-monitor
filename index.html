@@ -101,7 +101,7 @@ footer{border-top:1px solid var(--border);padding:16px 32px;font-size:11px;color
 <body>
 <header>
   <div class="logo"><div class="logo-dot"></div>Metamer · Energy Monitor</div>
-  <div class="header-meta"><span class="live-badge">live</span><span>maggio 2026</span><span>7 mag 2026</span></div>
+  <div class="header-meta"><span class="live-badge">live</span><span>maggio 2026</span><span>11 mag 2026</span></div>
 </header>
 <main>
   <div class="kpi-row">
@@ -113,7 +113,7 @@ footer{border-top:1px solid var(--border);padding:16px 32px;font-size:11px;color
   <div class="ref-block">
     <div class="ref-title">Riferimento Metamer</div>
     <div class="ref-card"><div class="ref-card-label">Due Fisso — Gas</div><div class="ref-card-val">QF: <b>144 €/a</b> · PM: <b>0.4250 €/Smc</b> · 24m · ref. 500 Smc</div></div>
-    <div class="ref-card"><div class="ref-card-label">Due Fisso — Luce</div><div class="ref-card-val">QF: <b>144 €/a</b> · PM: <b>0.13500 €/kWh</b> · 24m · ref. 2.700 kWh</div></div>
+    <div class="ref-card"><div class="ref-card-label">Due Fisso — Luce</div><div class="ref-card-val">QF: <b>144 €/a</b> · PM: <b>0.12990 €/kWh</b> · 24m · ref. 2.700 kWh</div></div>
     <div class="ref-card"><div class="ref-card-label">Prezzo Netto Zero — Gas</div><div class="ref-card-val">QF: <b>120 €/a</b> · Spread: <b>0.0000 €/Smc</b> su PSV · TI</div></div>
     <div class="ref-card"><div class="ref-card-label">Prezzo Netto Zero — Luce</div><div class="ref-card-val">QF: <b>120 €/a</b> · Spread: <b>0.00000 €/kWh</b> su PUN · TI</div></div>
   </div>
@@ -123,7 +123,7 @@ footer{border-top:1px solid var(--border);padding:16px 32px;font-size:11px;color
       <button class="tab" id="tl" onclick="setTab('luce')">⚡ Luce</button>
     </div>
     <div class="controls-right">
-      <span class="upd-time">7 mag 2026 · Fonti: siti ufficiali</span>
+      <span class="upd-time">11 mag 2026 · Fonti: siti ufficiali</span>
       <button id="lc-btn" onclick="runLinkCheck()" style="font-size:11px;padding:5px 12px">🔗 Verifica link</button>
       <button id="chart-btn" onclick="toggleCharts()" style="font-size:11px;padding:5px 12px">📊 Grafici</button>
     </div>
@@ -202,7 +202,7 @@ footer{border-top:1px solid var(--border);padding:16px 32px;font-size:11px;color
 
 <script>
 var IDX={psv:0.430,pun:0.112};
-var REF={gas:{df_pm:0.4250,df_qf:144,pnz_qf:120,cons:500},luce:{df_pm:0.13500,df_qf:144,pnz_qf:120,cons:2700}};
+var REF={gas:{df_pm:0.4250,df_qf:144,pnz_qf:120,cons:500},luce:{df_pm:0.12990,df_qf:144,pnz_qf:120,cons:2700}};
 var GAS=[
   {f:'Metamer',n:'Due Fisso',t:'fisso',qf:144,pm:0.4250,d:24,src:'metamer.it',note:'Riferimento Metamer — prezzo fisso 24 mesi.',isRef:true},
   {f:'Metamer',n:'Prezzo Netto Zero',t:'variabile',qf:120,pm:0,d:0,src:'metamer.it',note:'Riferimento Metamer — spread zero su PSV. TI.',isRef:true},
@@ -230,7 +230,7 @@ var GAS=[
   {f:'Iren',n:'10x3 Gas Variabile',t:'variabile',qf:156,pm:0.230,d:12,src:'irenlucegas.it',note:'PSV + 0.230 €/Smc — confermato irenlucegas.it. QF 156€/a. Valida fino 10/06/2026.',tag:'ok'}
 ];
 var LUCE=[
-  {f:'Metamer',n:'Due Fisso',t:'fisso',qf:144,pm:0.13500,d:24,src:'metamer.it',note:'Riferimento Metamer — prezzo fisso 24 mesi.',isRef:true},
+  {f:'Metamer',n:'Due Fisso',t:'fisso',qf:144,pm:0.12990,d:24,src:'metamer.it',note:'Riferimento Metamer — prezzo fisso 24 mesi.',isRef:true},
   {f:'Metamer',n:'Prezzo Netto Zero',t:'variabile',qf:120,pm:0,d:0,src:'metamer.it',note:'Riferimento Metamer — spread zero su PUN. TI.',isRef:true},
   {f:'Edison Energia',n:'WEB Luce',t:'fisso',qf:100,pm:0.1140,d:12,src:'offerte.edisonenergia.it',note:'0.1140 €/kWh monoraria — confermato offerte.edisonenergia.it. Promo QF 75€/a (anzichè 100€) per i primi 12m. Servizio Risolve incluso.',tag:'ok'},
   {f:'Octopus Energy',n:'Fissa 12M Luce',t:'fisso',qf:72,pm:0.1230,d:12,src:'octopusenergy.it',note:'0.123 €/kWh monoraria — settimana 07-13/05/2026 (▼ da 0.1298 settimana scorsa). Fonte: luce-gas.it 07/05. QF 72€/a (6€/mese). No penali. 100% rinnovabile GO.',tag:'sc'},
